@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive task manager built with JavaScript and localStorage.">
+  <title>TaskFlow | To-Do List</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="brand-icon" aria-hidden="true">✓</div>
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h1>Task<span>Flow</span></h1>
+      <p class="subtitle">Plan less. Do more.</p>
+    </header>
+
+    <section class="task-panel" aria-label="Task manager">
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input
+          id="task-input"
+          name="task"
+          type="text"
+          placeholder="What needs to get done?"
+          maxlength="200"
+          autocomplete="off"
+          required
+        >
+        <button class="add-button" type="submit" aria-label="Add task">+</button>
+      </form>
+
+      <p id="form-message" class="form-message" aria-live="polite"></p>
+
+      <div class="stats">
+        <div>
+          <span id="total-count" class="stat-number">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div>
+          <span id="active-count" class="stat-number">0</span>
+          <span class="stat-label">Active</span>
+        </div>
+        <div>
+          <span id="completed-count" class="stat-number">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+      </div>
+
+      <div class="list-heading">
+        <h2>Your tasks</h2>
+        <span id="task-summary" class="task-summary">0 tasks</span>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" class="filter-button is-active"
+          data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-button"
+          data-filter="active" aria-pressed="false">Active</button>
+        <button type="button" class="filter-button"
+          data-filter="completed" aria-pressed="false">Completed</button>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">✦</div>
+        <h3 id="empty-title">Nothing on your list yet</h3>
+        <p id="empty-description">Add your first task and get moving.</p>
+      </div>
+
+      <footer class="panel-footer">
+        <span><span class="save-dot"></span> Saved in this browser</span>
+        <button type="button" id="clear-completed" class="clear-button">
+          Clear completed
+        </button>
+      </footer>
+
+      <p id="storage-warning" class="storage-warning" hidden>
+        Browser storage is unavailable. Your tasks may not persist after you close this page.
+      </p>
+    </section>
+
+    <p class="page-note">Small steps lead to big results. ✨</p>
+  </main>
+</body>
+</html>
