@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search live weather conditions for cities around the world.">
+  <title>Atmos — Weather Dashboard</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Atmos home">
+        <span class="brand-icon" aria-hidden="true">☀</span>
+        atmos<span class="brand-dot">.</span>
+      </a>
+      <span class="live-label"><span class="live-dot"></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">WEATHER AT A GLANCE</p>
+      <h1>Discover your <span>weather.</span></h1>
+      <p class="intro-text">Explore current conditions anywhere in the world.</p>
+    </section>
+
+    <form id="search-form" class="search-form" role="search">
+      <label class="sr-only" for="city-input">Search city</label>
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input
+        id="city-input"
+        type="search"
+        name="city"
+        placeholder="Enter a city, e.g. Chennai"
+        autocomplete="off"
+        maxlength="100"
+        required
+      >
+      <button id="search-button" type="submit">Search <span aria-hidden="true">→</span></button>
+    </form>
+
+    <p id="status-message" class="status-message" role="status" aria-live="polite">
+      Search for a city to see its current weather.
+    </p>
+
+    <section id="weather-panel" class="weather-panel" aria-label="Current weather" hidden>
+      <div class="weather-heading">
+        <div>
+          <p class="eyebrow">CURRENT CONDITIONS</p>
+          <h2 id="location-name">City</h2>
+          <p id="local-time" class="muted"></p>
+        </div>
+        <span id="weather-icon" class="weather-icon" aria-hidden="true">☀️</span>
+      </div>
+
+      <div class="temperature-row">
+        <p id="temperature" class="temperature">--°</p>
+        <div class="condition-copy">
+          <p id="weather-description" class="condition">Loading...</p>
+          <p id="feels-like" class="muted">Feels like --°C</p>
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <article class="metric-card">
+          <span class="metric-icon" aria-hidden="true">💧</span>
+          <p class="metric-label">Humidity</p>
+          <p class="metric-value"><span id="humidity">--</span><small>%</small></p>
+          <p class="metric-note">Relative humidity</p>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon" aria-hidden="true">🌬️</span>
+          <p class="metric-label">Wind speed</p>
+          <p class="metric-value"><span id="wind-speed">--</span><small> km/h</small></p>
+          <p class="metric-note">At current conditions</p>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon" aria-hidden="true">🌧️</span>
+          <p class="metric-label">Precipitation</p>
+          <p class="metric-value"><span id="precipitation">--</span><small> mm</small></p>
+          <p class="metric-note">Current reported amount</p>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon" aria-hidden="true">🌡️</span>
+          <p class="metric-label">Feels like</p>
+          <p class="metric-value"><span id="feels-metric">--</span><small>°C</small></p>
+          <p class="metric-note">Apparent temperature</p>
+        </article>
+      </div>
+
+      <p id="updated-at" class="updated-at"></p>
+    </section>
+
+    <footer class="footer">
+      <p>Weather data provided by
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.
+      </p>
+      <p>Temperatures in °C · Wind in km/h</p>
+    </footer>
+  </main>
+</body>
+</html>
