@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopSphere - discover stylish tech, accessories and everyday essentials.">
+  <title>ShopSphere | Discover Your Next Favorite</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="home">
+  <header class="navbar">
+    <a class="logo" href="index.html">Shop<span>Sphere</span></a>
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="#products">Products</a>
+      <a href="cart.html">Cart <span class="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR EVERYDAY UPGRADE</span>
+        <h1>Good finds.<br>Better living.</h1>
+        <p>Discover useful tech, stylish accessories and essentials that fit your life.</p>
+        <a class="btn" href="#products">Explore products →</a>
+      </div>
+      <img
+        src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=900&q=80"
+        alt="Technology products arranged on a desk"
+        fetchpriority="high">
+    </section>
+
+    <section id="products" class="catalog section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE COLLECTION</span>
+          <h2>Explore products</h2>
+        </div>
+        <span id="result-count" class="muted"></span>
+      </div>
+
+      <div class="toolbar">
+        <input id="search-input" type="search"
+          placeholder="Search products..." aria-label="Search products">
+
+        <div id="categories" class="categories">
+          <button class="category active" data-category="All">All</button>
+          <button class="category" data-category="Electronics">Electronics</button>
+          <button class="category" data-category="Accessories">Accessories</button>
+          <button class="category" data-category="Lifestyle">Lifestyle</button>
+        </div>
+
+        <select id="sort-select" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low">Price: Low to high</option>
+          <option value="high">Price: High to low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+
+      <div id="product-grid" class="product-grid">
+        <p class="muted">Loading products...</p>
+      </div>
+    </section>
+
+    <section class="promo">
+      <div>
+        <span class="eyebrow">SIMPLE. USEFUL. THOUGHTFUL.</span>
+        <h2>Find something you'll love.</h2>
+        <p>Browse our collection and add your favorites to your cart.</p>
+      </div>
+      <a class="btn btn-light" href="#products">Shop now →</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html">Shop<span>Sphere</span></a>
+    <p>Demo e-commerce capstone · Built with HTML, CSS and JavaScript</p>
+  </footer>
+</body>
+</html>
